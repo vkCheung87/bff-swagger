@@ -41,18 +41,7 @@
                         "description" : "用户在该公司下的员工名"
                       },
                       "company" : {
-                        "type" : "object",
-                        "properties" : {
-                          "id" : {
-                            "type" : "integer",
-                            "format" : "int32",
-                            "description" : "该公司的系统ID"
-                          },
-                          "name" : {
-                            "type" : "string",
-                            "description" : "该公司的公司名"
-                          }
-                        }
+                        "$ref" : "#/definitions/Company"
                       }
                     }
                   }
