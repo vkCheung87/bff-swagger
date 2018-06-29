@@ -425,33 +425,53 @@
               "type" : "object",
               "properties" : {
                 "data" : {
-                  "type" : "array",
-                  "items" : {
-                    "type" : "object",
-                    "properties" : {
-                      "ticketTitle" : {
-                        "type" : "string",
-                        "description" : "单据的标题"
-                      },
-                      "ticketId" : {
-                        "type" : "number",
-                        "description" : "单据编号"
-                      },
-                      "createdTime" : {
-                        "type" : "string",
-                        "format" : "date-time",
-                        "description" : "单据创建时间"
-                      },
-                      "amount" : {
-                        "type" : "number",
-                        "format" : "double",
-                        "description" : "单据金额（如果没有为null）"
-                      },
-                      "approvalStatus" : {
-                        "type" : "string",
-                        "enum" : [ "approved", "rejected", "approving", "auditing", "audited", "rejectedFromAudit", "reviewing", "reviewed", "rejectedFromReview", "draft" ],
-                        "description" : "单据状态，具体的值有审批中（approving），审批通过（approved），拒绝（rejected），审核中（auditing），审核通过（audited），审批驳回（rejectedFromAudit），复核中（reviewing），复核通过（reviewed），复核驳回（rejectedFromReview）"
+                  "type" : "object",
+                  "properties" : {
+                    "data" : {
+                      "type" : "array",
+                      "items" : {
+                        "type" : "object",
+                        "properties" : {
+                          "ticketTitle" : {
+                            "type" : "string",
+                            "description" : "单据的标题"
+                          },
+                          "ticketId" : {
+                            "type" : "number",
+                            "description" : "单据编号"
+                          },
+                          "createdTime" : {
+                            "type" : "string",
+                            "format" : "date-time",
+                            "description" : "单据创建时间"
+                          },
+                          "amount" : {
+                            "type" : "number",
+                            "format" : "double",
+                            "description" : "单据金额（如果没有为null）"
+                          },
+                          "approvalStatus" : {
+                            "type" : "string",
+                            "enum" : [ "approved", "rejected", "approving", "auditing", "audited", "rejectedFromAudit", "reviewing", "reviewed", "rejectedFromReview", "draft", "recall" ],
+                            "description" : "单据状态，具体的值有审批中（approving），审批通过（approved），拒绝（rejected），审核中（auditing），审核通过（audited），审批驳回（rejectedFromAudit），复核中（reviewing），复核通过（reviewed），复核驳回（rejectedFromReview）, draft(草稿), recall (撤回)"
+                          }
+                        }
                       }
+                    },
+                    "total" : {
+                      "type" : "integer",
+                      "format" : "int32",
+                      "description" : "总条目数"
+                    },
+                    "pageSize" : {
+                      "type" : "integer",
+                      "format" : "int32",
+                      "description" : "查询的页面大小"
+                    },
+                    "pageNumber" : {
+                      "type" : "integer",
+                      "format" : "int32",
+                      "description" : "查询的页面位置"
                     }
                   }
                 }
