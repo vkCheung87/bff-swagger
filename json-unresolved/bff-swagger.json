@@ -1425,83 +1425,6 @@
             }
           }
         },
-        "expenses" : {
-          "type" : "array",
-          "items" : {
-            "type" : "object",
-            "properties" : {
-              "id" : {
-                "type" : "number",
-                "description" : "费用类型系统ID"
-              },
-              "fields" : {
-                "type" : "object",
-                "properties" : {
-                  "consumerTime" : {
-                    "type" : "string",
-                    "format" : "date",
-                    "description" : "发生日期"
-                  },
-                  "costField" : {
-                    "type" : "number",
-                    "format" : "double",
-                    "description" : "费用金额"
-                  },
-                  "flightCabin" : {
-                    "type" : "string",
-                    "description" : "飞机舱位"
-                  },
-                  "trainCabin" : {
-                    "type" : "string",
-                    "description" : "火车舱位"
-                  },
-                  "airline" : {
-                    "type" : "string",
-                    "description" : "航空公司"
-                  },
-                  "numberOfParticipant" : {
-                    "type" : "integer",
-                    "format" : "int32",
-                    "description" : "参与人数"
-                  },
-                  "merchantName" : {
-                    "type" : "string",
-                    "description" : "商户名称"
-                  },
-                  "hotelStar" : {
-                    "type" : "string",
-                    "description" : "酒店星级"
-                  },
-                  "depature" : {
-                    "type" : "string",
-                    "description" : "出发地"
-                  },
-                  "destination" : {
-                    "type" : "string",
-                    "description" : "目的地"
-                  },
-                  "consumerCity" : {
-                    "type" : "string",
-                    "description" : "消费城市"
-                  },
-                  "discount" : {
-                    "type" : "number",
-                    "format" : "double",
-                    "description" : "折扣"
-                  },
-                  "currency" : {
-                    "type" : "string",
-                    "description" : "币种"
-                  },
-                  "remark" : {
-                    "type" : "string",
-                    "description" : "备注"
-                  }
-                }
-              }
-            }
-          }
-        },
         "attachtments" : {
           "type" : "array",
           "description" : "附件列表",
@@ -1537,6 +1460,10 @@
           "type" : "string",
           "description" : "目的地"
         },
+        "cityLevel" : {
+          "type" : "string",
+          "description" : "城市等级"
+        },
         "beginDate" : {
           "type" : "string",
           "format" : "date",
@@ -1546,6 +1473,120 @@
           "type" : "string",
           "format" : "date",
           "description" : "结束时间"
+        },
+        "expenses" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Expense"
+          }
+        },
+        "subsidies" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Subsidy"
+          }
+        }
+      }
+    },
+    "Expense" : {
+      "description" : "具体费用项",
+      "type" : "object",
+      "properties" : {
+        "id" : {
+          "type" : "number",
+          "description" : "费用类型系统ID"
+        },
+        "fields" : {
+          "type" : "object",
+          "properties" : {
+            "consumerTime" : {
+              "type" : "string",
+              "format" : "date",
+              "description" : "发生日期"
+            },
+            "costField" : {
+              "type" : "number",
+              "format" : "double",
+              "description" : "费用金额"
+            },
+            "flightCabin" : {
+              "type" : "string",
+              "description" : "飞机舱位"
+            },
+            "trainCabin" : {
+              "type" : "string",
+              "description" : "火车舱位"
+            },
+            "airline" : {
+              "type" : "string",
+              "description" : "航空公司"
+            },
+            "numberOfParticipant" : {
+              "type" : "integer",
+              "format" : "int32",
+              "description" : "参与人数"
+            },
+            "merchantName" : {
+              "type" : "string",
+              "description" : "商户名称"
+            },
+            "hotelStar" : {
+              "type" : "string",
+              "description" : "酒店星级"
+            },
+            "depature" : {
+              "type" : "string",
+              "description" : "出发地"
+            },
+            "destination" : {
+              "type" : "string",
+              "description" : "目的地"
+            },
+            "consumerCity" : {
+              "type" : "string",
+              "description" : "消费城市"
+            },
+            "discount" : {
+              "type" : "number",
+              "format" : "double",
+              "description" : "折扣"
+            },
+            "currency" : {
+              "type" : "string",
+              "description" : "币种"
+            },
+            "remark" : {
+              "type" : "string",
+              "description" : "备注"
+            }
+          }
+        }
+      }
+    },
+    "Subsidy" : {
+      "description" : "补助，按天或按次的",
+      "type" : "object",
+      "properties" : {
+        "date" : {
+          "type" : "integer",
+          "format" : "int64"
+        },
+        "fee" : {
+          "type" : "number",
+          "format" : "double",
+          "description" : "补贴金额"
+        },
+        "currency" : {
+          "type" : "string",
+          "description" : "补贴币种"
+        },
+        "calculateMode" : {
+          "type" : "string",
+          "enum" : [ "times", "halfDay", "wholeDay" ]
+        },
+        "susidyId" : {
+          "type" : "integer",
+          "format" : "int32"
         }
       }
     },
