@@ -1450,6 +1450,13 @@
               }
             }
           }
+        },
+        "subsidies" : {
+          "type" : "array",
+          "$ref" : null,
+          "items" : {
+            "$ref" : "#/definitions/Subsidy"
+          }
         }
       }
     },
@@ -1478,12 +1485,6 @@
           "type" : "array",
           "items" : {
             "$ref" : "#/definitions/Expense"
-          }
-        },
-        "subsidies" : {
-          "type" : "array",
-          "items" : {
-            "$ref" : "#/definitions/Subsidy"
           }
         }
       }
