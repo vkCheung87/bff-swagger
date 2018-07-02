@@ -1453,7 +1453,6 @@
         },
         "subsidies" : {
           "type" : "array",
-          "$ref" : null,
           "items" : {
             "$ref" : "#/definitions/Subsidy"
           }
