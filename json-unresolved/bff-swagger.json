@@ -1587,6 +1587,12 @@
         "susidyId" : {
           "type" : "integer",
           "format" : "int32"
+        },
+        "occurTimes" : {
+          "type" : "integer",
+          "format" : "int32",
+          "default" : 1,
+          "description" : "补助fa's"
         }
       }
     },
