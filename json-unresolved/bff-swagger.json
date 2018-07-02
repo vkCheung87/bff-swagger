@@ -1586,13 +1586,23 @@
         },
         "susidyId" : {
           "type" : "integer",
-          "format" : "int32"
+          "format" : "int32",
+          "description" : "对应的补助政策ID"
         },
         "occurTimes" : {
           "type" : "integer",
           "format" : "int32",
           "default" : 1,
-          "description" : "补助fa's"
+          "description" : "补助发生的次数，该字段只对按次发生的补助有效"
+        },
+        "hasDiscount" : {
+          "type" : "boolean",
+          "format" : false,
+          "description" : "是否打折"
+        },
+        "discountMessage" : {
+          "type" : "string",
+          "description" : "打折信息"
         }
       }
     },
