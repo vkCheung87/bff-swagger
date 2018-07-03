@@ -1593,7 +1593,7 @@
         "subsidyItemId" : {
           "type" : "integer",
           "format" : "int32",
-          "description" : "对应的补助政策ID"
+          "description" : "对应的补助政策项的ID"
         },
         "occurTimes" : {
           "type" : "integer",
