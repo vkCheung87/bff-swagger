@@ -1706,6 +1706,21 @@
           "description" : "会计科目名称"
         }
       }
+    },
+    "TicketWithAuditor" : {
+      "type" : "object",
+      "description" : "包含单据详细和审批历史的wrapper对象",
+      "properties" : {
+        "ticket" : {
+          "$ref" : "#/definitions/Ticket"
+        },
+        "audits" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/ApprovalHistory"
+          }
+        }
+      }
     }
   },
   "host" : "virtserver.swaggerhub.com",
