@@ -1001,7 +1001,7 @@
         },
         "currency" : {
           "type" : "string",
-          "enum" : [ "dollar" ],
+          "enum" : [ "USD", "CNY" ],
           "description" : "具体币种"
         }
       }
