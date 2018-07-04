@@ -488,7 +488,7 @@
           "in" : "body",
           "required" : true,
           "schema" : {
-            "$ref" : "#/definitions/Ticket"
+            "$ref" : "#/definitions/TicketWithAuditor"
           }
         } ],
         "responses" : {
@@ -608,18 +608,7 @@
               "type" : "object",
               "properties" : {
                 "data" : {
-                  "type" : "object",
-                  "properties" : {
-                    "ticket" : {
-                      "$ref" : "#/definitions/Ticket"
-                    },
-                    "audits" : {
-                      "type" : "array",
-                      "items" : {
-                        "$ref" : "#/definitions/ApprovalHistory"
-                      }
-                    }
-                  }
+                  "$ref" : "#/definitions/TicketWithAuditor"
                 }
               }
             }
