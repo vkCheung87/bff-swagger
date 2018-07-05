@@ -1366,7 +1366,7 @@
         "ticketName" : {
           "type" : "string"
         },
-        "headers" : {
+        "header" : {
           "type" : "object",
           "properties" : {
             "depature" : {
