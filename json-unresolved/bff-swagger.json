@@ -338,11 +338,23 @@
           "required" : true,
           "type" : "number"
         }, {
-          "name" : "ticket_id",
+          "name" : "currentTicketId",
           "in" : "query",
           "description" : "需要关联单据的单据ID",
           "required" : false,
           "type" : "number"
+        }, {
+          "name" : "pageSize",
+          "in" : "query",
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "查询的页面大小"
+        }, {
+          "name" : "pageNumber",
+          "in" : "query",
+          "type" : "integer",
+          "format" : "int32",
+          "description" : "查询的页面位置"
         } ],
         "responses" : {
           "200" : {
