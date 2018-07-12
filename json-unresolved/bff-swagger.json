@@ -500,7 +500,8 @@
           "in" : "path",
           "required" : true,
           "type" : "string",
-          "enum" : [ "nextAction", "approval", "audit" ]
+          "enum" : [ "nextAction", "approval", "audit" ],
+          "default" : "approval"
         }, {
           "name" : "body",
           "in" : "body",
