@@ -496,6 +496,12 @@
         "summary" : "提交表单",
         "tags" : [ "ticket" ],
         "parameters" : [ {
+          "name" : "saveTo",
+          "in" : "path",
+          "required" : true,
+          "type" : "string",
+          "enum" : [ "nextAction", "approval", "audit" ]
+        }, {
           "name" : "body",
           "in" : "body",
           "required" : true,
